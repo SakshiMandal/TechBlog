@@ -9,10 +9,11 @@ public class User {
 	private String email;
 	private String password;
 	private String gender;
-	private Timestamp dateTime;
+	private String dateTime;
 	private String about;
+	private String profile;
 
-	public User(int id, String name, String email, String password, String gender, Timestamp dateTime, String about) {
+	public User(int id, String name, String email, String password, String gender, String dateTime, String about) {
 
 		this.id = id;
 		this.name = name;
@@ -27,13 +28,23 @@ public class User {
 
 	}
 
-	public User(String name, String email, String password, String gender, Timestamp dateTime, String about) {
+	public User(String name, String email, String password, String gender, String dateTime, String about) {
 
 		this.name = name;
 		this.email = email;
 		this.password = password;
 		this.gender = gender;
 		this.dateTime = dateTime;
+		this.about = about;
+	}
+
+	
+	public User(String name, String email, String password, String gender, String about) {
+		super();
+		this.name = name;
+		this.email = email;
+		this.password = password;
+		this.gender = gender;
 		this.about = about;
 	}
 
@@ -77,12 +88,12 @@ public class User {
 		this.gender = gender;
 	}
 
-	public Timestamp getDateTime() {
+	public String getDateTime() {
 		return dateTime;
 	}
 
-	public void setDateTime(Timestamp dateTime) {
-		this.dateTime = dateTime;
+	public void setDateTime(String string) {
+		this.dateTime = string;
 	}
 
 	public String getAbout() {
@@ -92,5 +103,21 @@ public class User {
 	public void setAbout(String about) {
 		this.about = about;
 	}
+
+	public String getProfile() {
+		return profile;
+	}
+
+	public void setProfile(String profile) {
+		this.profile = profile;
+	}
+
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", name=" + name + ", email=" + email + ", password=" + password + ", gender="
+				+ gender + ", dateTime=" + dateTime + ", about=" + about + ", profile=" + profile + "]";
+	}
+	
+	
 
 }
